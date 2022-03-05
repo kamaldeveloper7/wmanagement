@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.flight.builder.AirportBuilder;
 import com.google.gson.Gson;
 import com.flight.builder.FlightBuilder;
-import com.flight.domain.flight.Schedule;
+import com.flight.domain.trip.Schedule;
 import com.flight.domain.measurement.Time;
 import com.flight.domain.measurement.TimeFormat;
 import com.flight.facade.FlightOptionFacade;

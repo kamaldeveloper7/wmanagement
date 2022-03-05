@@ -1,8 +1,6 @@
-package com.flight.domain.airline;
+package com.flight.domain.terminal;
 
 public interface IAirport {
-
-    String getCode();
 
     String getCountryCode();
 }

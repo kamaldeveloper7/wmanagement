@@ -1,8 +1,8 @@
 package com.flight.builder;
 
-import com.flight.domain.airline.Airport;
-import com.flight.domain.flight.Flight;
-import com.flight.domain.flight.Schedule;
+import com.flight.domain.terminal.Airport;
+import com.flight.domain.trip.Flight;
+import com.flight.domain.trip.Schedule;
 
 public class FlightBuilder {
     private String flightNo;

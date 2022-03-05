@@ -1,6 +1,8 @@
 package com.flight.builder;
 
-import com.flight.domain.airline.Airport;
+import com.flight.domain.measurement.Time;
+import com.flight.domain.measurement.TimeFormat;
+import com.flight.domain.terminal.Airport;
 
 public class AirportBuilder {
     private String countryCode;
@@ -21,6 +23,6 @@ public class AirportBuilder {
     }
 
     public Airport build() {
-        return new Airport(this.airportCode, this.countryCode);
+        return new Airport(this.airportCode, this.countryCode, new Time("120", TimeFormat.HHMM));
     }
 }

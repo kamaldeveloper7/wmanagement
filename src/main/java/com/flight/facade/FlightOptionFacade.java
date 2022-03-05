@@ -1,9 +1,10 @@
 package com.flight.facade;
 
-import com.flight.domain.airline.Airline;
-import com.flight.domain.airline.CommercialAirline;
-import com.flight.domain.airline.Airport;
-import com.flight.domain.flight.Flight;
+import com.flight.domain.vehicle.Airline;
+import com.flight.domain.vehicle.CommercialAirline;
+import com.flight.domain.terminal.Airport;
+import com.flight.domain.trip.Flight;
+import com.flight.selectionStrategy.FlightSelectionStrategy;
 import com.flight.selectionStrategy.IFlightSelectionStrategy;
 
 import java.util.ArrayList;
@@ -22,9 +23,10 @@ public class FlightOptionFacade {
         this.flightHashMap = new HashMap<>();
     }
 
-    public List<FlightOption> getAllFlightOption(String fromAirportCode, String toAirportCode, IFlightSelectionStrategy flightSelectionStrategy){
+    public List<FlightOption> getAllFlightOption(String fromAirportCode, String toAirportCode){
         List<FlightOption> flightOptions = new ArrayList<>();
-        flightSelectionStrategy.completeJourney(fromAirportCode, toAirportCode, this.airline.getFlightMap(), this.airportsInfo, this.flightHashMap);
+        IFlightSelectionStrategy flightSelectionStrategy = new FlightSelectionStrategy(this.airline.getFlightMap(), this.airportsInfo, this.flightHashMap);
+        flightSelectionStrategy.completeJourney(fromAirportCode, toAirportCode);
         return flightOptions;
     }
 
@@ -42,7 +44,7 @@ public class FlightOptionFacade {
 
     public void addFlightSchedule(Flight flight) {
         this.airline.addFlight(flight);
-        this.flightHashMap.put(flight.getFlightCode(), flight);
+        this.flightHashMap.put(flight.getTripCode(), flight);
     }
 
     public void registerAirline() {

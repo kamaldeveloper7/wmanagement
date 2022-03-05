@@ -1,4 +1,4 @@
-package com.flight.domain.flight;
+package com.flight.domain.trip;
 
 import com.flight.domain.measurement.Time;
 

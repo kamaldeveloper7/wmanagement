@@ -1,7 +1,6 @@
-package com.flight.domain.airline;
+package com.flight.domain.vehicle;
 
-import com.flight.domain.airline.Airline;
-import com.flight.domain.flight.Flight;
+import com.flight.domain.trip.Flight;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,12 +1,12 @@
-package com.flight.domain.airline;
+package com.flight.domain.vehicle;
 
-import com.flight.domain.flight.Flight;
+import com.flight.domain.trip.Flight;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public abstract class Airline implements IAirService {
+public abstract class Airline implements IVehicle, IAirService {
 
     private String name;
     protected List<Flight> flightList;
@@ -19,6 +19,12 @@ public abstract class Airline implements IAirService {
     @Override
     public String getName() {
         return this.name;
+    }
+
+
+    @Override
+    public String getNumber() {
+        return null;
     }
 
     @Override
